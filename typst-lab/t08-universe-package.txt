@@ -1,0 +1,32 @@
+$ typst compile package-demo.typ out/package-demo.pdf (first use downloads the package)
+error: failed to download package (https://packages.typst.org/preview/numbly-0.1.0.tar.gz: Connection Failed: native_tls connect failed: unexpected EOF)
+  ┌─ package-demo.typ:1:8
+  │
+1 │ #import "@preview/numbly:0.1.0": numbly
+  │         ^^^^^^^^^^^^^^^^^^^^^^^
+
+exit: 1
+$ pdftotext package-demo.pdf -
+$ ls the local package cache
+
+$ curl -sLO https://packages.typst.org/preview/numbly-0.1.0.tar.gz (fetch the same tarball with curl)
+curl exit: 0
+-rw-rw---- 1 root root 1729 Oct 30 13:29 numbly-0.1.0.tar.gz
+e349be2ff133f3b7154f97462e73862ee31de613e506ef06964069a35756ff12  numbly-0.1.0.tar.gz
+$ mkdir -p ~/.local/share/typst/packages/preview/numbly/0.1.0 && tar -xzf numbly-0.1.0.tar.gz -C ~/.local/share/typst/packages/preview/numbly/0.1.0
+$ ls ~/.local/share/typst/packages/preview/numbly/0.1.0
+LICENSE
+README.md
+lib.typ
+typst.toml
+$ cd typst-lab && typst compile package-demo.typ out/package-demo.pdf (package now local)
+exit: 0
+$ pdftotext package-demo.pdf -
+A. First main section
+1) A subsection under it
+
+B. Second main section
+The headings above are numbered by the numbly package: letters for level one, a number in
+brackets for level two — a format Typst’s built-in numbering strings cannot express on their own.
+
+

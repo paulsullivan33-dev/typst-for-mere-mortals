@@ -1,0 +1,53 @@
+$ typst compile letter.typ out/letter.pdf
+exit: 0
+$ pdftotext letter.pdf - | head -8
+Bramble Lane Allotment Society · 14 Bramble Lane
+
+30 October 2026
+Dear Mrs Ellison,
+Thank you for your patience about the waiting list. A half plot has come free on the lower field, and
+your name is at the top of the list. If you would like it, the rent is £27 for the year from 1 January, and
+the plot is yours from the day we receive it.
+The secretary can show you the plot any Saturday morning.
+$ typst compile newsletter.typ out/newsletter.pdf
+error: vertical floating placement must be `auto`, `top`, or `bottom`
+   ┌─ newsletter.typ:4:1
+   │  
+ 4 │   #place(scope: "parent", float: true)[
+   │ ╭──^
+ 5 │ │   #align(center)[
+ 6 │ │     #text(size: 18pt, weight: "bold")[The Bramble Lane Gazette]
+ 7 │ │     #linebreak()
+ 8 │ │     Autumn 2026 · Issue 12
+ 9 │ │   ]
+10 │ │ ]
+   │ ╰─^
+
+exit: 1
+$ pdftotext newsletter.pdf - | head -6 (text order shows the spanning title first)
+$ pdfinfo both
+Pages:           1
+
+$ (fixed: float: top in place of float: true — the 0.15 spelling)
+$ typst compile newsletter.typ out/newsletter.pdf
+error: expected boolean, found alignment
+  ┌─ newsletter.typ:4:31
+  │
+4 │ #place(scope: "parent", float: top)[
+  │                                ^^^
+
+exit: 1
+$ pdfinfo newsletter.pdf | grep Pages
+$ pdftotext newsletter.pdf - | head -5
+
+$ (second fix: the position argument carries the vertical placement — #place(top, scope: "parent", float: true))
+$ typst compile newsletter.typ out/newsletter.pdf
+exit: 0
+$ pdfinfo newsletter.pdf | grep Pages
+Pages:           1
+$ pdftotext newsletter.pdf - | head -5 (title spans both columns, then the articles)
+The Bramble Lane Gazette
+Autumn 2026 · Issue 12
+
+Path repairs begin
+The main path will be dug up and relaid over the first

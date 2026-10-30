@@ -1,0 +1,38 @@
+$ typst compile stock-report.typ ~/workspace/typst-labwork/out/stock-report.pdf
+exit: 0
+$ pdftotext stock-report.pdf - | grep -E "£|holds"
+Season: Autumn 2026. The shed budget for the year is £750. This report is generated from
+£8.50
+£51.00
+£24.99
+£99.96
+£21.50
+£107.50
+£6.75
+£81.00
+£3.20
+£128.00
+£2.40
+£60.00
+£1.95
+£58.50
+£4.60
+£36.80
+£2.85
+£42.75
+£1.50
+£30.00
+£695.51
+The shed currently holds 165 items with a replacement value of £695.51, against a budget of £750.
+$ awk cross-check of inventory.csv (quantity sum, value sum)
+items=165 value=695.51
+$ python3 cross-check
+items=165 value=695.51
+$ typst query stock-report.typ "<shed-total>" --field value
+["695.51"]
+warning: the `typst query` subcommand is deprecated
+ = hint: use `typst eval 'query(<shed-total>).map(it => it.value)' --in stock-report.typ` instead
+
+
+$ typst eval 'query(<shed-total>).map(it => it.value)' --in stock-report.typ
+["695.51"]

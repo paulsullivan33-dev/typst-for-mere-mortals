@@ -1,0 +1,52 @@
+$ typst compile err-var.typ (unknown variable)
+error: unknown variable: total-value
+  ┌─ err-var.typ:3:16
+  │
+3 │ The shed holds #total-value items in all.
+  │                 ^^^^^^^^^^^
+  │
+  = hint: if you meant to use subtraction, try adding spaces around the minus sign: `total - value`
+
+exit: 1
+
+$ typst compile err-syntax.typ (unclosed parenthesis)
+error: unclosed delimiter
+  ┌─ err-syntax.typ:3:13
+  │
+3 │ #let items = (3, 5, 8
+  │              ^
+
+error: expected comma
+  ┌─ err-syntax.typ:3:21
+  │
+3 │ #let items = (3, 5, 8
+  │                      ^
+
+error: expected comma
+  ┌─ err-syntax.typ:4:3
+  │
+4 │ The total is #items.sum().
+  │    ^
+
+error: expected comma
+  ┌─ err-syntax.typ:4:9
+  │
+4 │ The total is #items.sum().
+  │          ^
+
+error: the character `#` is not valid in code
+  ┌─ err-syntax.typ:4:13
+  │
+4 │ The total is #items.sum().
+  │              ^
+  │
+  = hint: you are already in code mode
+  = hint: try removing the `#`
+
+error: expected identifier
+  ┌─ err-syntax.typ:4:26
+  │
+4 │ The total is #items.sum().
+  │                           ^
+
+exit: 1

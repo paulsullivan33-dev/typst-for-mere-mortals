@@ -1,0 +1,86 @@
+$ cd typst-lab && python3 make-chart.py
+wrote chart.svg: 635 seedlings in total
+$ ls -la chart.svg
+-rw-rw---- 1 root root 1511 Oct 30 13:18 chart.svg
+$ typst compile report.typ ~/workspace/typst-labwork/out/report.pdf
+exit: 0
+$ pdfinfo report.pdf
+Syntax Error: Suspects object is wrong type (boolean)
+Creator:         Typst 0.15.1
+CreationDate:    Fri Oct 30 13:18:05 2026 UTC
+ModDate:         Fri Oct 30 13:18:05 2026 UTC
+Custom Metadata: no
+Metadata Stream: yes
+Tagged:          yes
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           3
+Encrypted:       no
+Page size:       595.276 x 841.89 pts (A4)
+Page rot:        0
+File size:       40646 bytes
+Optimized:       no
+PDF version:     1.7
+$ pdftotext report.pdf - | head -60
+Bramble Lane Allotment Society
+Autumn Report 2026
+
+Contents
+1. The season in short . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ⁠1
+2. Seedlings from the greenhouse . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ⁠1
+3. Plot rents and fees . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ⁠1
+4. The tool shed . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ⁠3
+5. Looking ahead . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ⁠3
+
+1. The season in short
+The society’s forty-one plots stayed fully let all year, and the waiting list grew to nineteen names. This
+report covers the spring sowing, the summer watering rota, and the state of the shared tool shed at the
+end of October.
+The headline figures:
+• 41 plots, all let, 19 people waiting
+• 635 seedlings raised in the communal greenhouse
+• 3 working parties held, averaging 14 volunteers each
+
+2. Seedlings from the greenhouse
+The greenhouse team raised bedding plants for members to buy at cost. Monthly totals are shown in
+Figure 1. May was the peak month, as it is every year, and the team has asked for a second cold frame
+before next spring.
+
+203
+176
+
+118
+96
+
+42
+
+Mar
+
+Apr
+
+May
+
+Jun
+
+Jul
+
+Figure 1: Seedlings raised per month, spring and summer 2026.
+
+3. Plot rents and fees
+Plot size
+
+Plots Rent per year
+
+Full plot
+
+26
+
+£48
+
+Half plot
+
+15
+
+£27

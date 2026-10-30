@@ -1,0 +1,11 @@
+$ curl -LO https://github.com/typst/typst/releases/download/v0.15.1/typst-x86_64-unknown-linux-musl.tar.xz
+$ sha256sum typst-x86_64-unknown-linux-musl.tar.xz
+a6d077d0a95eed5a2eba715b2dae06be954f624ccbf85758a03f389ded33118c  typst-x86_64-unknown-linux-musl.tar.xz
+$ ls -la
+total 17056
+drwxrwx--- 1 root root       76 Oct 30 13:16 .
+drwxrwx--- 1 root root        4 Oct 30 13:16 ..
+-rw-rw---- 1 root root 17462992 Oct 30 13:16 typst-x86_64-unknown-linux-musl.tar.xz
+$ tar -xJf typst-x86_64-unknown-linux-musl.tar.xz
+$ ./typst-x86_64-unknown-linux-musl/typst --version
+typst 0.15.1 (9dfd3a08)

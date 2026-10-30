@@ -1,0 +1,13 @@
+$ typst compile style-demo.typ out/style-plain.svg (and .png)
+$ typst compile style-demo-styled.typ out/style-styled.svg (and .png)
+$ grep -o "1a5c2e" style-plain.svg | wc -l ; grep -o "1a5c2e" style-styled.svg | wc -l
+0
+17
+$ python3: count pixels of the heading green (26,92,46) in each PNG
+style-plain size (827, 1169) green pixels: 0 of 966763
+style-styled size (827, 1169) green pixels: 655 of 966763
+$ ls -la the four exports
+-rw-rw---- 1 root root 21277 Oct 30 13:18 /home/hatch/workspace/typst-labwork/out/style-plain.png
+-rw-rw---- 1 root root 51202 Oct 30 13:18 /home/hatch/workspace/typst-labwork/out/style-plain.svg
+-rw-rw---- 1 root root 25053 Oct 30 13:18 /home/hatch/workspace/typst-labwork/out/style-styled.png
+-rw-rw---- 1 root root 47800 Oct 30 13:18 /home/hatch/workspace/typst-labwork/out/style-styled.svg

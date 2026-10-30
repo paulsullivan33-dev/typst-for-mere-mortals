@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300">
+<rect width="520" height="300" fill="white"/>
+<line x1="50" y1="260" x2="500" y2="260" stroke="black" stroke-width="2"/>
+<rect x="60" y="212.4" width="64" height="47.6" fill="#4a7c59"/>
+<text x="92.0" y="204.4" font-family="sans-serif" font-size="15" text-anchor="middle">42</text>
+<text x="92.0" y="282" font-family="sans-serif" font-size="15" text-anchor="middle">Mar</text>
+<rect x="152" y="126.3" width="64" height="133.7" fill="#4a7c59"/>
+<text x="184.0" y="118.3" font-family="sans-serif" font-size="15" text-anchor="middle">118</text>
+<text x="184.0" y="282" font-family="sans-serif" font-size="15" text-anchor="middle">Apr</text>
+<rect x="244" y="30.0" width="64" height="230.0" fill="#4a7c59"/>
+<text x="276.0" y="22.0" font-family="sans-serif" font-size="15" text-anchor="middle">203</text>
+<text x="276.0" y="282" font-family="sans-serif" font-size="15" text-anchor="middle">May</text>
+<rect x="336" y="60.6" width="64" height="199.4" fill="#4a7c59"/>
+<text x="368.0" y="52.6" font-family="sans-serif" font-size="15" text-anchor="middle">176</text>
+<text x="368.0" y="282" font-family="sans-serif" font-size="15" text-anchor="middle">Jun</text>
+<rect x="428" y="151.2" width="64" height="108.8" fill="#4a7c59"/>
+<text x="460.0" y="143.2" font-family="sans-serif" font-size="15" text-anchor="middle">96</text>
+<text x="460.0" y="282" font-family="sans-serif" font-size="15" text-anchor="middle">Jul</text>
+</svg>

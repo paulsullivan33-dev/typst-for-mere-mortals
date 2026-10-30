@@ -1,0 +1,29 @@
+site_name: Typst for Mere Mortals
+site_description: A modern typesetting system that turns plain text files into finished PDFs. Markup and code in one language, styles set once and applied everywhere, documents built from your own data, and error messages that point at the exact character, with the limits stated plainly.
+site_url: https://paulsullivan33-dev.github.io/typst-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text CC BY 4.0, code MIT'
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What Typst Is: what-typst-is.md
+  - The Moving Parts: the-moving-parts.md
+  - Installing Typst: installing-typst.md
+  - First Checks: first-checks.md
+  - Your First Document: your-first-document.md
+  - Styling with Set and Show: styling-with-set-and-show.md
+  - Functions and Reusable Pieces: functions-and-reusable-pieces.md
+  - Documents from Data: documents-from-data.md
+  - Images, Tables and Layout: images-tables-and-layout.md
+  - Longer Documents: longer-documents.md
+  - Errors, and How Typst Talks to You: errors-and-how-typst-talks.md
+  - Recipes: recipes.md
+  - The Neighbours: the-neighbours.md
+  - Limits: limits.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md

@@ -1,0 +1,31 @@
+$ typst compile report.typ out/report.png --ppi 72 (first page only is not the default: one PNG per page, {p} in the name)
+exit: 0
+$ typst compile report.typ out/report.svg
+error: cannot export multiple images without a page number template ({p}, {0p}) in the output path
+
+exit: 1
+$ ls -la out/
+-rw-rw---- 1 root root 70475 Oct 30 13:18 report-1.png
+-rw-rw---- 1 root root 13969 Oct 30 13:18 report-2.png
+-rw-rw---- 1 root root 46311 Oct 30 13:18 report-3.png
+-rw-rw---- 1 root root 40646 Oct 30 13:18 report.pdf
+-rw-rw---- 1 root root 39217 Oct 30 13:18 stock-report.pdf
+-rw-rw---- 1 root root 21277 Oct 30 13:18 style-plain.png
+-rw-rw---- 1 root root 51202 Oct 30 13:18 style-plain.svg
+-rw-rw---- 1 root root 25053 Oct 30 13:18 style-styled.png
+-rw-rw---- 1 root root 47800 Oct 30 13:18 style-styled.svg
+$ file out/report-1.png out/report.svg out/report.pdf
+/home/hatch/workspace/typst-labwork/out/report-1.png: PNG image data, 595 x 842, 8-bit/color RGBA, non-interlaced
+/home/hatch/workspace/typst-labwork/out/report.svg:   cannot open `/home/hatch/workspace/typst-labwork/out/report.svg' (No such file or directory)
+/home/hatch/workspace/typst-labwork/out/report.pdf:   PDF document, version 1.7, 3 page(s)
+
+$ typst compile report.typ "out/report-{p}.svg" (with the page template)
+exit: 0
+$ ls -la out/report-*.svg
+-rw-rw---- 1 root root 259532 Oct 30 13:19 /home/hatch/workspace/typst-labwork/out/report-1.svg
+-rw-rw---- 1 root root  47815 Oct 30 13:19 /home/hatch/workspace/typst-labwork/out/report-2.svg
+-rw-rw---- 1 root root 121737 Oct 30 13:19 /home/hatch/workspace/typst-labwork/out/report-3.svg
+$ file out/report-1.svg
+/home/hatch/workspace/typst-labwork/out/report-1.svg: SVG Scalable Vector Graphics image
+$ head -c 300 out/report-1.svg
+<svg viewBox="0 0 595.275590551 841.88976378" width="595.275590551pt" height="841.88976378pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml"><path fill="#ffffff" fill-rule="nonzero" d="M 0 0v 841.88976378h 595.275590551v -841.889
